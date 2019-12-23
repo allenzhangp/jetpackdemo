@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.Observer
-import androidx.lifecycle.OnLifecycleEvent
 import com.bumptech.glide.Glide
 import com.treefintech.jetpack.bean.LoadState
 import kotlinx.android.synthetic.main.activity_main.*
@@ -48,16 +46,5 @@ class MainActivity : AppCompatActivity() {
         }
 
         supportFragmentManager.beginTransaction().add(R.id.frameContainer,userProfileFragment).commit()
-    }
-
-
-    @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
-    fun connectListener() {
-        println("Lifecycle.Event.ON_RESUME")
-    }
-
-    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
-    fun disconnectListener() {
-        println("Lifecycle.Event.ON_PAUSE")
     }
 }
