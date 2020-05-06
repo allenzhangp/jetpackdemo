@@ -20,6 +20,7 @@ class MainViewModel : ViewModel() {
 //    }
 
     fun getData() {
+        
         launch({
             loadState.value = LoadState.Loading("加载中...")
             val resultImage1 = async { NetworkService.apiService.getImage() }
